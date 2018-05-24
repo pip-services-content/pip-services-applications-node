@@ -3,7 +3,7 @@ import { CommandableHttpService } from 'pip-services-net-node';
 
 export class ApplicationsHttpServiceV1 extends CommandableHttpService {
     public constructor() {
-        super('applications');
+        super('v1/applications');
         this._dependencyResolver.put('controller', new Descriptor('pip-services-applications', 'controller', 'default', '*', '1.0'));
     }
 }

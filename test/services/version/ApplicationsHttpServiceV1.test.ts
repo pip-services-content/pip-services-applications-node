@@ -73,7 +73,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
         async.series([
         // Create one application
             (callback) => {
-                rest.post('/applications/create_application',
+                rest.post('/v1/applications/create_application',
                     {
                         application: APPLICATION1
                     },
@@ -93,7 +93,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
             },
         // Create another application
             (callback) => {
-                rest.post('/applications/create_application', 
+                rest.post('/v1/applications/create_application', 
                     {
                         application: APPLICATION2
                     },
@@ -113,7 +113,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
             },
         // Get all applications
             (callback) => {
-                rest.post('/applications/get_applications',
+                rest.post('/v1/applications/get_applications',
                     {},
                     (err, req, res, page) => {
                         assert.isNull(err);
@@ -129,7 +129,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
             (callback) => {
                 application1.name = 'Updated Name 1';
 
-                rest.post('/applications/update_application',
+                rest.post('/v1/applications/update_application',
                     { 
                         application: application1
                     },
@@ -148,7 +148,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
             },
         // Delete application
             (callback) => {
-                rest.post('/applications/delete_application_by_id',
+                rest.post('/v1/applications/delete_application_by_id',
                     {
                         application_id: application1.id
                     },
@@ -163,7 +163,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
             },
         // Try to get delete application
             (callback) => {
-                rest.post('/applications/get_application_by_id',
+                rest.post('/v1/applications/get_application_by_id',
                     {
                         application_id: application1.id
                     },

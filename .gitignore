@@ -1,7 +1,7 @@
-/dist
 /node_modules
 /npm-debug.log
 /.idea
 /data/applications.test.json
 /data/applications.json
 /obj/test
+/docker/id_rsa*
