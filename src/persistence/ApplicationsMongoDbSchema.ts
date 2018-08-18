@@ -10,11 +10,12 @@ export let ApplicationsMongoDbSchema = function(collection?: string) {
             _id: { type: String, required: true, unique: true },
             
             /* Content */
-            name: { type: String, required: true },
-            description: { type: String, required: false },
+            name: { type: Mixed, required: true },
+            description: { type: Mixed, required: false },
             product: { type: String, required: true },
             copyrights: { type: String, required: false },
             url: { type: String, required: false },
+            icon: { type: String, required: false },
             min_ver: { type: Number, required: false },
             max_ver: { type: Number, required: false }
         },

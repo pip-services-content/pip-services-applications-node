@@ -18,8 +18,6 @@ class ApplicationsMemoryPersistence extends pip_services_data_node_1.Identifiabl
         search = search.toLowerCase();
         if (this.matchString(item.id, search))
             return true;
-        if (this.matchString(item.name, search))
-            return true;
         if (this.matchString(item.product, search))
             return true;
         if (this.matchString(item.copyrights, search))
@@ -30,14 +28,11 @@ class ApplicationsMemoryPersistence extends pip_services_data_node_1.Identifiabl
         filter = filter || new pip_services_commons_node_1.FilterParams();
         let search = filter.getAsNullableString('search');
         let id = filter.getAsNullableString('id');
-        let name = filter.getAsNullableString('name');
         let product = filter.getAsNullableString('product');
         return (item) => {
             if (search && !this.matchSearch(item, search))
                 return false;
             if (id && item.id != id)
-                return false;
-            if (name && item.name != name)
                 return false;
             if (product && item.product != product)
                 return false;

@@ -26,7 +26,6 @@ export class ApplicationsMongoDbPersistence extends IdentifiableMongoDbPersisten
             let searchRegex = new RegExp(search, "i");
             let searchCriteria = [];
             searchCriteria.push({ id: { $regex: searchRegex } });
-            searchCriteria.push({ name: { $regex: searchRegex } });
             searchCriteria.push({ product: { $regex: searchRegex } });
             searchCriteria.push({ copyrights: { $regex: searchRegex } });
             criteria.push({ $or: searchCriteria });
@@ -35,10 +34,6 @@ export class ApplicationsMongoDbPersistence extends IdentifiableMongoDbPersisten
         let id = filter.getAsNullableString('id');
         if (id != null)
             criteria.push({ _id: id });
-
-        let name = filter.getAsNullableString('name');
-        if (name != null)
-            criteria.push({ name: name });
 
         let product = filter.getAsNullableString('product');
         if (product != null)

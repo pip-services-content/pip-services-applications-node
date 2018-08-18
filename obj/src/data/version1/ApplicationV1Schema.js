@@ -6,11 +6,12 @@ class ApplicationV1Schema extends pip_services_commons_node_1.ObjectSchema {
     constructor() {
         super();
         this.withOptionalProperty('id', pip_services_commons_node_2.TypeCode.String);
-        this.withRequiredProperty('name', pip_services_commons_node_2.TypeCode.String);
-        this.withOptionalProperty('description', pip_services_commons_node_2.TypeCode.String);
+        this.withRequiredProperty('name', pip_services_commons_node_2.TypeCode.Map);
+        this.withOptionalProperty('description', pip_services_commons_node_2.TypeCode.Map);
         this.withRequiredProperty('product', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('copyrights', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('url', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('icon', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('min_ver', pip_services_commons_node_2.TypeCode.Integer);
         this.withOptionalProperty('max_ver', pip_services_commons_node_2.TypeCode.Integer);
     }

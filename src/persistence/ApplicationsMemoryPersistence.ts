@@ -29,8 +29,6 @@ export class ApplicationsMemoryPersistence
         search = search.toLowerCase();
         if (this.matchString(item.id, search))
             return true;
-        if (this.matchString(item.name, search))
-            return true;
         if (this.matchString(item.product, search))
             return true;
         if (this.matchString(item.copyrights, search))
@@ -43,15 +41,12 @@ export class ApplicationsMemoryPersistence
         
         let search = filter.getAsNullableString('search');
         let id = filter.getAsNullableString('id');
-        let name = filter.getAsNullableString('name');
         let product = filter.getAsNullableString('product');
                 
         return (item) => {
             if (search && !this.matchSearch(item, search)) 
                 return false;
             if (id && item.id != id) 
-                return false;
-            if (name && item.name != name) 
                 return false;
             if (product && item.product != product) 
                 return false;

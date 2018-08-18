@@ -14,7 +14,7 @@ import { ApplicationsLambdaFunction } from '../../src/container/ApplicationsLamb
 
 let APPLICATION1: ApplicationV1 = {
     id: '1',
-    name: 'App 1',
+    name: { en: 'App 1' },
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -22,7 +22,7 @@ let APPLICATION1: ApplicationV1 = {
 };
 let APPLICATION2: ApplicationV1 = {
     id: '2',
-    name: 'App 2',
+    name: { en: 'App 2' },
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -115,7 +115,7 @@ suite('ApplicationsLambdaFunction', ()=> {
             },
         // Update the application
             (callback) => {
-                application1.name = 'Updated Name 1';
+                application1.name.en = 'Updated Name 1';
 
                 lambda.act(
                     {
@@ -127,7 +127,7 @@ suite('ApplicationsLambdaFunction', ()=> {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name, 'Updated Name 1');
+                        assert.equal(application.name.en, 'Updated Name 1');
                         assert.equal(application.id, APPLICATION1.id);
 
                         application1 = application;
