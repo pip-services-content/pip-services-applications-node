@@ -9,6 +9,7 @@ export class ApplicationV1 implements IStringIdentifiable {
     public name: MultiString;
     public description?: MultiString;
     public product: string;
+    public group?: string;
     public copyrights?: string;
     public url?: string;
     public icon?: string;

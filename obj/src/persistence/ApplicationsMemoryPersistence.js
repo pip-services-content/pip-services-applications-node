@@ -29,12 +29,15 @@ class ApplicationsMemoryPersistence extends pip_services_data_node_1.Identifiabl
         let search = filter.getAsNullableString('search');
         let id = filter.getAsNullableString('id');
         let product = filter.getAsNullableString('product');
+        let group = filter.getAsNullableString('group');
         return (item) => {
             if (search && !this.matchSearch(item, search))
                 return false;
             if (id && item.id != id)
                 return false;
             if (product && item.product != product)
+                return false;
+            if (group && item.group != group)
                 return false;
             return true;
         };

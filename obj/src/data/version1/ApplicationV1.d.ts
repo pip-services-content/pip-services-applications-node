@@ -5,6 +5,7 @@ export declare class ApplicationV1 implements IStringIdentifiable {
     name: MultiString;
     description?: MultiString;
     product: string;
+    group?: string;
     copyrights?: string;
     url?: string;
     icon?: string;

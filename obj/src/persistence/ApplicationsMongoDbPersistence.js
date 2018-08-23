@@ -26,6 +26,9 @@ class ApplicationsMongoDbPersistence extends pip_services_oss_node_1.Identifiabl
         let product = filter.getAsNullableString('product');
         if (product != null)
             criteria.push({ product: product });
+        let group = filter.getAsNullableString('group');
+        if (group != null)
+            criteria.push({ group: group });
         return criteria.length > 0 ? { $and: criteria } : null;
     }
     getPageByFilter(correlationId, filter, paging, callback) {

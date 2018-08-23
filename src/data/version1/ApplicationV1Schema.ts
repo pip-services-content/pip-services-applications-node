@@ -9,6 +9,7 @@ export class ApplicationV1Schema extends ObjectSchema {
         this.withRequiredProperty('name', TypeCode.Map);
         this.withOptionalProperty('description', TypeCode.Map);
         this.withRequiredProperty('product', TypeCode.String);
+        this.withOptionalProperty('group', TypeCode.String);
         this.withOptionalProperty('copyrights', TypeCode.String);
         this.withOptionalProperty('url', TypeCode.String);
         this.withOptionalProperty('icon', TypeCode.String);

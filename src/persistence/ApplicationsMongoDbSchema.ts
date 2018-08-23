@@ -13,6 +13,7 @@ export let ApplicationsMongoDbSchema = function(collection?: string) {
             name: { type: Mixed, required: true },
             description: { type: Mixed, required: false },
             product: { type: String, required: true },
+            group: { type: String, required: false },
             copyrights: { type: String, required: false },
             url: { type: String, required: false },
             icon: { type: String, required: false },

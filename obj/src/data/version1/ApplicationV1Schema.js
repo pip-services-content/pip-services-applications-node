@@ -9,6 +9,7 @@ class ApplicationV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withRequiredProperty('name', pip_services_commons_node_2.TypeCode.Map);
         this.withOptionalProperty('description', pip_services_commons_node_2.TypeCode.Map);
         this.withRequiredProperty('product', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('group', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('copyrights', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('url', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('icon', pip_services_commons_node_2.TypeCode.String);
