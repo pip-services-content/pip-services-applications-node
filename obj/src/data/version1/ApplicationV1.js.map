@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 {"version":3,"file":"ApplicationV1.js","sourceRoot":"","sources":["../../../../src/data/version1/ApplicationV1.ts"],"names":[],"mappings":";;AAAA,IAAI,CAAC,GAAG,OAAO,CAAC,QAAQ,CAAC,CAAC;AAM1B,MAAa,aAAa;CAWzB;AAXD,sCAWC"}
-=======
-{"version":3,"file":"ApplicationV1.js","sourceRoot":"","sources":["../../../../src/data/version1/ApplicationV1.ts"],"names":[],"mappings":";;AAAA,IAAI,CAAC,GAAG,OAAO,CAAC,QAAQ,CAAC,CAAC;AAM1B;CAUC;AAVD,sCAUC"}
->>>>>>> 66ef879664b127ddebca3833830549e3afc84d3b
