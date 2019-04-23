@@ -1,4 +1,4 @@
-import { CommandSet } from 'pip-services-commons-node';
+import { CommandSet } from 'pip-services3-commons-node';
 import { IApplicationsController } from './IApplicationsController';
 export declare class ApplicationsCommandSet extends CommandSet {
     private _logic;

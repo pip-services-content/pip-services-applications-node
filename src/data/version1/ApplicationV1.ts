@@ -1,8 +1,8 @@
 let _ = require('lodash');
 
-import { IdGenerator } from 'pip-services-commons-node';
-import { IStringIdentifiable } from 'pip-services-commons-node';
-import { MultiString } from 'pip-services-commons-node';
+import { IdGenerator } from 'pip-services3-commons-node';
+import { IStringIdentifiable } from 'pip-services3-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 export class ApplicationV1 implements IStringIdentifiable {
     public id: string;

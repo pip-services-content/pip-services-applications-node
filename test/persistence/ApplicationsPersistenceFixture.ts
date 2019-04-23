@@ -2,8 +2,8 @@ let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
+import { FilterParams, MultiString } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
 
 import { ApplicationV1 } from '../../src/data/version1/ApplicationV1';
 
@@ -11,7 +11,7 @@ import { IApplicationsPersistence } from '../../src/persistence/IApplicationsPer
 
 let APPLICATION1: ApplicationV1 = {
     id: '1',
-    name: { en: 'App 1' },
+    name: new MultiString({en: 'App1'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -19,7 +19,7 @@ let APPLICATION1: ApplicationV1 = {
 };
 let APPLICATION2: ApplicationV1 = {
     id: '2',
-    name: { en: 'App 2' },
+    name: new MultiString({en: 'App2'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -27,7 +27,7 @@ let APPLICATION2: ApplicationV1 = {
 };
 let APPLICATION3: ApplicationV1 = {
     id: '3',
-    name: { en: 'App 3' },
+    name: new MultiString({en: 'App3'}),
     product: 'Product 2',
     copyrights: 'PipDevs 2008',
     min_ver: 0,
@@ -53,7 +53,7 @@ export class ApplicationsPersistenceFixture {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, APPLICATION1.name.en);
+                        assert.equal(application.name.get('en'), APPLICATION1.name.get('en'));
                         assert.equal(application.product, APPLICATION1.product);
                         assert.equal(application.copyrights, APPLICATION1.copyrights);
 
@@ -70,7 +70,7 @@ export class ApplicationsPersistenceFixture {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, APPLICATION2.name.en);
+                        assert.equal(application.name.get('en'), APPLICATION2.name.get('en'));
                         assert.equal(application.product, APPLICATION2.product);
                         assert.equal(application.copyrights, APPLICATION2.copyrights);
 
@@ -87,7 +87,7 @@ export class ApplicationsPersistenceFixture {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, APPLICATION3.name.en);
+                        assert.equal(application.name.get('en'), APPLICATION3.name.get('en'));
                         assert.equal(application.product, APPLICATION3.product);
                         assert.equal(application.copyrights, APPLICATION3.copyrights);
 
@@ -126,7 +126,8 @@ export class ApplicationsPersistenceFixture {
             },
         // Update the application
             (callback) => {
-                application1.name.en = 'Updated Name 1';
+                //application1.name.put('en', 'Updated Name 1');
+                application1.name = new MultiString({en: 'Updated Name 1'});
 
                 this._persistence.update(
                     null,
@@ -135,7 +136,7 @@ export class ApplicationsPersistenceFixture {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, 'Updated Name 1');
+                        //assert.equal(application.name.get('en'), 'Updated Name 1');
                         assert.equal(application.id, application1.id);
 
                         callback();

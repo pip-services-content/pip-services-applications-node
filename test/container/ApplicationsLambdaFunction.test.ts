@@ -2,10 +2,10 @@ let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { Descriptor } from 'pip-services-commons-node';
-import { ConfigParams } from 'pip-services-commons-node';
-import { References } from 'pip-services-commons-node';
-import { ConsoleLogger } from 'pip-services-components-node';
+import { Descriptor, MultiString } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { References } from 'pip-services3-commons-node';
+import { ConsoleLogger } from 'pip-services3-components-node';
 
 import { ApplicationV1 } from '../../src/data/version1/ApplicationV1';
 import { ApplicationsMemoryPersistence } from '../../src/persistence/ApplicationsMemoryPersistence';
@@ -14,7 +14,7 @@ import { ApplicationsLambdaFunction } from '../../src/container/ApplicationsLamb
 
 let APPLICATION1: ApplicationV1 = {
     id: '1',
-    name: { en: 'App 1' },
+    name: new MultiString({en: 'App1'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -22,7 +22,7 @@ let APPLICATION1: ApplicationV1 = {
 };
 let APPLICATION2: ApplicationV1 = {
     id: '2',
-    name: { en: 'App 2' },
+    name: new MultiString({en: 'App2'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,

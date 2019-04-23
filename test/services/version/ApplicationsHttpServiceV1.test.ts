@@ -3,9 +3,9 @@ let async = require('async');
 let restify = require('restify');
 let assert = require('chai').assert;
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { Descriptor } from 'pip-services-commons-node';
-import { References } from 'pip-services-commons-node';
+import { ConfigParams, MultiString } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { References } from 'pip-services3-commons-node';
 
 import { ApplicationV1 } from '../../../src/data/version1/ApplicationV1';
 import { ApplicationsMemoryPersistence } from '../../../src/persistence/ApplicationsMemoryPersistence';
@@ -20,7 +20,7 @@ let httpConfig = ConfigParams.fromTuples(
 
 let APPLICATION1: ApplicationV1 = {
     id: '1',
-    name: { en: 'App 1' },
+    name: new MultiString({en: 'App1'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -28,7 +28,7 @@ let APPLICATION1: ApplicationV1 = {
 };
 let APPLICATION2: ApplicationV1 = {
     id: '2',
-    name: { en: 'App 2' },
+    name: new MultiString({en: 'App1'}),
     product: 'Product 1',
     copyrights: 'PipDevs 2018',
     min_ver: 0,
@@ -81,7 +81,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, APPLICATION1.name.en);
+                        assert.equal(application.name.en, APPLICATION1.name.get('en'));
                         assert.equal(application.product, APPLICATION1.product);
                         assert.equal(application.copyrights, APPLICATION1.copyrights);
 
@@ -101,7 +101,7 @@ suite('ApplicationsHttpServiceV1', ()=> {
                         assert.isNull(err);
 
                         assert.isObject(application);
-                        assert.equal(application.name.en, APPLICATION2.name.en);
+                        assert.equal(application.name.en, APPLICATION2.name.get('en'));
                         assert.equal(application.product, APPLICATION2.product);
                         assert.equal(application.copyrights, APPLICATION2.copyrights);
 
