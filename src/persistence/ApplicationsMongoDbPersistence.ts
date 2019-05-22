@@ -4,16 +4,16 @@ import { FilterParams } from 'pip-services3-commons-node';
 import { PagingParams } from 'pip-services3-commons-node';
 import { DataPage } from 'pip-services3-commons-node';
 import { TagsProcessor } from 'pip-services3-commons-node';
-import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-node';
+import { IdentifiableMongoosePersistence } from 'pip-services3-mongoose-node';
 
 import { ApplicationV1 } from '../data/version1/ApplicationV1';
 import { IApplicationsPersistence } from './IApplicationsPersistence';
-import { ApplicationsMongoDbSchema } from './ApplicationsMongoDbSchema';
+import { ApplicationsMongooseSchema } from './ApplicationsMongooseSchema';
 
-export class ApplicationsMongoDbPersistence extends IdentifiableMongoDbPersistence<ApplicationV1, string> implements IApplicationsPersistence {
+export class ApplicationsMongoDbPersistence extends IdentifiableMongoosePersistence<ApplicationV1, string> implements IApplicationsPersistence {
 
     constructor() {
-        super('applications', ApplicationsMongoDbSchema());
+        super('applications', ApplicationsMongooseSchema());
     }
     
     private composeFilter(filter: any) {
