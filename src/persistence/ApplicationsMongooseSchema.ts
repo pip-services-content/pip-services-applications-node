@@ -7,7 +7,7 @@ export let ApplicationsMongooseSchema = function(collection?: string) {
     let schema = new Schema(
         {
             /* Identification */
-            _id: { type: String, required: true, unique: true },
+            _id: { type: String },
             
             /* Content */
             name: { type: Mixed, required: true },

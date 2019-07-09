@@ -6,7 +6,7 @@ exports.ApplicationsMongooseSchema = function (collection) {
     collection = collection || 'applications';
     let schema = new mongoose_1.Schema({
         /* Identification */
-        _id: { type: String, required: true, unique: true },
+        _id: { type: String },
         /* Content */
         name: { type: Mixed, required: true },
         description: { type: Mixed, required: false },
