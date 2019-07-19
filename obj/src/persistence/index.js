@@ -8,4 +8,6 @@ var ApplicationsMongooseSchema_1 = require("./ApplicationsMongooseSchema");
 exports.ApplicationsMongooseSchema = ApplicationsMongooseSchema_1.ApplicationsMongooseSchema;
 var ApplicationsMongoDbPersistence_1 = require("./ApplicationsMongoDbPersistence");
 exports.ApplicationsMongoDbPersistence = ApplicationsMongoDbPersistence_1.ApplicationsMongoDbPersistence;
+var ApplicationsCouchbasePersistence_1 = require("./ApplicationsCouchbasePersistence");
+exports.ApplicationsCouchbasePersistence = ApplicationsCouchbasePersistence_1.ApplicationsCouchbasePersistence;
 //# sourceMappingURL=index.js.map
