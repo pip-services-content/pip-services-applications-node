@@ -50,6 +50,7 @@ message Application {
     string icon = 8;
     int32 min_ver = 9;
     int32 max_ver = 10;
+    repeated string access_rights = 11;
 }
 
 message ApplicationPage {

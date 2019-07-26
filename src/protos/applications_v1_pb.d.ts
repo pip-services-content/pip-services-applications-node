@@ -111,6 +111,11 @@ export class Application extends jspb.Message {
   getMaxVer(): number;
   setMaxVer(value: number): void;
 
+  clearAccessRightsList(): void;
+  getAccessRightsList(): Array<string>;
+  setAccessRightsList(value: Array<string>): void;
+  addAccessRights(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Application.AsObject;
   static toObject(includeInstance: boolean, msg: Application): Application.AsObject;
@@ -133,6 +138,7 @@ export namespace Application {
     icon: string,
     minVer: number,
     maxVer: number,
+    accessRightsList: Array<string>,
   }
 }
 

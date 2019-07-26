@@ -109,6 +109,7 @@ class ApplicationsGrpcConverterV1 {
         obj.setIcon(application.icon);
         obj.setMinVer(application.min_ver);
         obj.setMaxVer(application.max_ver);
+        obj.setAccessRightsList(application.access_rights);
         return obj;
     }
     static toApplication(obj) {
@@ -124,7 +125,8 @@ class ApplicationsGrpcConverterV1 {
             url: obj.getUrl(),
             icon: obj.getIcon(),
             min_ver: obj.getMinVer(),
-            max_ver: obj.getMaxVer()
+            max_ver: obj.getMaxVer(),
+            access_rights: obj.getAccessRightsList()
         };
         ApplicationsGrpcConverterV1.setMap(application.name, obj.getNameMap());
         ApplicationsGrpcConverterV1.setMap(application.description, obj.getDescriptionMap());

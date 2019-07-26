@@ -73,7 +73,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.applications_v1.Application = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.applications_v1.Application.repeatedFields_, null);
 };
 goog.inherits(proto.applications_v1.Application, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -737,6 +737,13 @@ proto.applications_v1.PagingParams.prototype.setTotal = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.applications_v1.Application.repeatedFields_ = [11];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -775,7 +782,8 @@ proto.applications_v1.Application.toObject = function(includeInstance, msg) {
     url: jspb.Message.getFieldWithDefault(msg, 7, ""),
     icon: jspb.Message.getFieldWithDefault(msg, 8, ""),
     minVer: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    maxVer: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    maxVer: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    accessRightsList: jspb.Message.getRepeatedField(msg, 11)
   };
 
   if (includeInstance) {
@@ -855,6 +863,10 @@ proto.applications_v1.Application.deserializeBinaryFromReader = function(msg, re
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxVer(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAccessRights(value);
       break;
     default:
       reader.skipField();
@@ -946,6 +958,13 @@ proto.applications_v1.Application.serializeBinaryToWriter = function(message, wr
   if (f !== 0) {
     writer.writeInt32(
       10,
+      f
+    );
+  }
+  f = message.getAccessRightsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      11,
       f
     );
   }
@@ -1111,6 +1130,38 @@ proto.applications_v1.Application.prototype.getMaxVer = function() {
 /** @param {number} value */
 proto.applications_v1.Application.prototype.setMaxVer = function(value) {
   jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * repeated string access_rights = 11;
+ * @return {!Array<string>}
+ */
+proto.applications_v1.Application.prototype.getAccessRightsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/** @param {!Array<string>} value */
+proto.applications_v1.Application.prototype.setAccessRightsList = function(value) {
+  jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ */
+proto.applications_v1.Application.prototype.addAccessRights = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.applications_v1.Application.prototype.clearAccessRightsList = function() {
+  this.setAccessRightsList([]);
 };
 
 

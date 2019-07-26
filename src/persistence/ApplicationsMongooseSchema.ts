@@ -18,7 +18,8 @@ export let ApplicationsMongooseSchema = function(collection?: string) {
             url: { type: String, required: false },
             icon: { type: String, required: false },
             min_ver: { type: Number, required: false },
-            max_ver: { type: Number, required: false }
+            max_ver: { type: Number, required: false },
+            access_rights: { type: [String], required: false }
         },
         {
             collection: collection,

@@ -15,4 +15,5 @@ export class ApplicationV1 implements IStringIdentifiable {
     public icon?: string;
     public min_ver?: number;
     public max_ver?: number;
+    public access_rights?: string[];
 }

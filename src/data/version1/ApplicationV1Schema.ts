@@ -15,5 +15,6 @@ export class ApplicationV1Schema extends ObjectSchema {
         this.withOptionalProperty('icon', TypeCode.String);
         this.withOptionalProperty('min_ver', TypeCode.Integer);
         this.withOptionalProperty('max_ver', TypeCode.Integer);
+        this.withOptionalProperty('access_rights', new ArraySchema(TypeCode.String));
     }
 }

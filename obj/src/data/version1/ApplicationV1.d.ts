@@ -11,4 +11,5 @@ export declare class ApplicationV1 implements IStringIdentifiable {
     icon?: string;
     min_ver?: number;
     max_ver?: number;
+    access_rights?: string[];
 }
