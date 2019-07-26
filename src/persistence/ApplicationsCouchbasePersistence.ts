@@ -15,7 +15,7 @@ export class ApplicationsCouchbasePersistence
     implements IApplicationsPersistence {
 
     constructor() {
-        super('applications');
+        super('content', 'applications');
     }
 
     private composeFilter(filter: FilterParams): any {
