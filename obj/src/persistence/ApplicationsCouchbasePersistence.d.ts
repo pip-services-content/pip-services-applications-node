@@ -6,6 +6,6 @@ import { ApplicationV1 } from '../data/version1/ApplicationV1';
 import { IApplicationsPersistence } from './IApplicationsPersistence';
 export declare class ApplicationsCouchbasePersistence extends IdentifiableCouchbasePersistence<ApplicationV1, string> implements IApplicationsPersistence {
     constructor();
-    private composeFilter;
+    private composeFilter(filter);
     getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, callback: (err: any, page: DataPage<ApplicationV1>) => void): void;
 }
