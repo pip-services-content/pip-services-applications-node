@@ -35,6 +35,6 @@ class ApplicationsController {
         this._persistence.deleteById(correlationId, id, callback);
     }
 }
-ApplicationsController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-applications:persistence:*:*:1.0');
 exports.ApplicationsController = ApplicationsController;
+ApplicationsController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-applications:persistence:*:*:1.0');
 //# sourceMappingURL=ApplicationsController.js.map
