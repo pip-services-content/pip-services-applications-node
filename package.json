@@ -1,6 +1,6 @@
 {
     "name": "pip-services-applications-node",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Applications microservice in Node.js",
     "contributors": [
@@ -46,7 +46,7 @@
         "pip-services3-aws-node": "^3.0.0",
         "pip-services3-rpc-node": "^3.0.0",
         "pip-services3-grpc-node": "^3.0.0",
-        "pip-services3-mongoose-node": "^3.0.0"
+        "pip-services3-mongodb-node": "^3.0.0"
     },
     "devDependencies": {
         "google-protobuf": "^3.7.1",
@@ -57,7 +57,6 @@
         "@types/chai": "*",
         "@types/mocha": "*",
         "@types/mongodb": "^2.1.38",
-        "@types/mongoose": "^4.7.4",
         "restify": "^4.3.0",
         "chai": "*",
         "mocha": "*"
